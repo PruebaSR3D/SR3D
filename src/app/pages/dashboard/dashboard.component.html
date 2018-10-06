@@ -1,0 +1,66 @@
+
+<div class="row">
+    <div class="col-lg-3 col-sm-6" *ngFor="let num_sensor of num_sensors">
+        <ngx-sensor-card [device]="num_sensor"></ngx-sensor-card>
+    </div>
+    <div class="col-lg-3 col-sm-6" *ngFor="let bin_sensor of sensors">
+      <ngx-sensor-card [device]="bin_sensor"></ngx-sensor-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xxxl-3 col-md-6" *ngFor="let light of lightsRGB">
+    <ngx-status-card [device]="light">
+      <i class='fas fa-lightbulb'></i>
+    </ngx-status-card>
+  </div>
+
+  <div class="col-xxxl-3 col-md-6" *ngFor="let light of lightsWTA">
+    <ngx-status-card [device]="light">
+      <i class='fas fa-lightbulb'></i>
+    </ngx-status-card>
+  </div>
+
+  <div class="col-xxxl-3 col-md-6" *ngFor="let switch of switches">
+    <ngx-status-card [device]="switch">
+      <i class='ion-outlet'></i>
+    </ngx-status-card>
+  </div>
+</div>
+
+
+<!-- 
+<div class="row">
+  <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
+    <ngx-temperature></ngx-temperature>
+  </div>
+
+  <div class="col-xxxl-9 col-xxl-8 col-lg-7 col-md-6">
+    <ngx-electricity></ngx-electricity>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xxxl-9 col-xl-12">
+    <ngx-rooms></ngx-rooms>
+  </div>
+
+  <div class="col-xxxl-3 col-xxl-4 col-lg-7 col-md-6">
+    <ngx-contacts></ngx-contacts>
+  </div>
+
+  <div class="col-xxxl-3 col-xxl-4 col-lg-5 col-md-6">
+    <ngx-solar [chartValue]="72"></ngx-solar>
+
+    <ngx-kitten></ngx-kitten>
+  </div>
+
+  <div class="col-xxxl-3 col-xxl-4 col-md-5">
+    <ngx-traffic></ngx-traffic>
+    <ngx-weather></ngx-weather>
+  </div>
+
+  <div class="col-xxxl-6 col-xxl-12 col-md-7">
+    <ngx-security-cameras></ngx-security-cameras>
+  </div>
+</div> -->

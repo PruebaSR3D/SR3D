@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="content">
+      <div class="row">
+          <div class="col-xs-4">
+              <div class="icon-big icon-{{device.typeColor}} text-center">
+                  <i class="{{device.icon}}"></i>
+              </div>
+          </div>
+          <div class="col-xs-8 num-container">
+              <div class="numbers">
+                  <p>{{device.name}}</p>
+                  <!-- <div *ngIf="this.device['entity_id'].split('.')[0] == 'sensor'; else isBinary">
+                    {{device.value}} {{device.unit}}
+                  </div>
+                  <ng-template #isBinary>
+                    {{ device.value ? 'Abierto' : 'Cerrado' }}
+                  </ng-template> -->
+                  {{ device | sensorValue }}
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

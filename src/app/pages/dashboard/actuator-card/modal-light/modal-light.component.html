@@ -1,0 +1,38 @@
+<div class="modal-header" [ngStyle]="{'background': colorState.hex}">
+    <h4 class="modal-title">Configurar {{device['name']}}:</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="modal-body">    
+    <div class="row" id="switch-container">
+        <div class="col-md-4">
+            <h4>Estado:</h4>
+        </div>
+        <div class="row col-md-8">
+            <h6>Apagado</h6>
+            <ui-switch [(ngModel)]="lightState" (change)="onChangeDisabled()"></ui-switch>
+            <h6>Encendido</h6>
+        </div>
+    </div>
+    <div *ngIf="lightState">
+        <h4>Color:</h4>
+        <div class="color-picker-container">
+            <color-hue-picker [color]="colorState" (onChangeComplete)="hueChangeComplete($event)" (onChange)="hueHeader($event)"
+            width='100%'></color-hue-picker>
+        </div>
+    </div>
+
+    <div class="slider">
+        <h4>Saturación:</h4>
+        <ng5-slider [(value)]="saturacion" (userChangeEnd)="onUserChangeSat($event)" (userChange)="satHeader($event)" [options]="optionsSat"></ng5-slider>
+    </div>
+        <div class="slider">
+            <h4>Intensidad:</h4>
+            <ng5-slider [(value)]="intensidad" (userChangeEnd)="onUserChangeInt($event)" [options]="optionsInt"></ng5-slider>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="activeModal.close('Close click')">Listo</button>
+</div>
